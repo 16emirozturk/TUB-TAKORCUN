@@ -1,0 +1,31 @@
+GÜVENLİ OKUL — PDF FONT HATASI / STREAMLIT CLOUD
+
+Önerilen GitHub depo yerleşimi:
+
+app.py
+ db.py
+ gelistirmeler.py
+ fonts/
+   DejaVuSans.ttf
+   DejaVuSans-Bold.ttf
+   NotoSansArabic-Regular.ttf
+   NotoSansArabic-Bold.ttf
+   DEJAVU-LICENSE.txt
+   NOTO-LICENSE.txt
+
+`fonts` klasörü, `app.py` ile aynı proje kökünde olmalıdır. Bu pakette klasör ve font dosyaları
+birlikte sunulmuştur. GitHub'a ZIP dosyasını tek başına yüklemeyin; ZIP'i çıkarıp içindeki
+proje dosyalarını ve klasörleri depo köküne yükleyin.
+
+PDF kodu önce proje içindeki fonts/ klasörünü, ardından proje kökünü, çalışma dizinini ve
+bilinen sistem font dizinlerini arar. Unicode fontlar bulunamazsa PDF üretimini durdurmaz:
+Helvetica / Helvetica-Bold ile güvenli yedek oluşturur ve aksanlı karakterleri sadeleştirir.
+Arapça fontu veya şekillendirme paketleri bulunamazsa bozuk Arapça glifler basmak yerine
+raporu İngilizce olarak üretir ve PDF içine bu durumu açıklayan not ekler.
+
+Yüklemeden sonra Streamlit Community Cloud > Manage app > Reboot app seçeneğiyle uygulamayı
+yeniden başlatın. Gerekiyorsa Settings > Secrets içindeki admin bilgilerini kontrol edin.
+Gerçek `.streamlit/secrets.toml` dosyasını ve veritabanı dosyasını GitHub'a yüklemeyin.
+
+Not: Helvetica yedeği PDF'nin oluşturulmasını sağlar; Unicode fontlarla aynı tipografik kaliteyi
+ve tüm dillerdeki karakterleri garanti etmez. En iyi çıktı için fonts/ klasörünü depoya ekleyin.
